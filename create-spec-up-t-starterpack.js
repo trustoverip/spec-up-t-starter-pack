@@ -21,7 +21,7 @@ function setupSpecUpTStarterPack(targetDir) {
     // Copy 'spec-up-starterpack' directory
     execSync(`cp -r ${starterFilesDir} ${targetDir}`);
 
-    console.log('Spec-Up-T starterpack setup complete.\n\nNow cd into the directory that you just created and run "npm install" to install dependencies:\n\ncd spec-up-starterpack\n\nnpm install\n\n\nNote: you can change the directory name to anything you like.');
+    console.log('Spec-Up-T starterpack setup complete.\n\nNow cd into the directory that you just created and run "npm install" to install dependencies:\n\ncd spec-up-t-starterpack\n\nnpm install\n\n\nNote: you can change the directory name to anything you like.');
 }
 
 // Get the target directory from command line arguments or use current directory
