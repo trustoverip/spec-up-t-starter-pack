@@ -1,10 +1,10 @@
 
-name: spec-up-render
+name: spec-up-t-render
 
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   build-and-deploy-spec:
