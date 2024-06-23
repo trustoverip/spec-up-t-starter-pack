@@ -1,6 +1,6 @@
 {
   "name": "create-spec-up-t",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Quick setup for a specification with the Spec-Up-T tool.",
   "bin": {
     "create-spec-up-t": "create-spec-up-t-starterpack.js"
