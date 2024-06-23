@@ -64,7 +64,6 @@
                     "module": true
                 }
             ],
-            "katex": false,
             "searchHighlightStyle": "ssi"
         }
     ]
