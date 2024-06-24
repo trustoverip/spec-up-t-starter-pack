@@ -21,6 +21,11 @@ async function setupSpecUpTStarterPack(dirName) {
         // Copy 'spec-up-starterpack' directory
         await fs.copy(sourceDir, targetDir);
 
+        // Rename path.join(sourceDir, 'gitignore') to path.join(targetDir, '.gitignore')
+        if (await fs.existsSync(path.join(targetDir, 'gitignore'))) {
+            await fs.rename(path.join(targetDir, 'gitignore'), path.join(targetDir, '.gitignore'));
+        }
+
         // Replace'spec-up-t-starterpack' with the name of the target directory in README.md
         let data = await fs.readFile(readmeFile, 'utf8');
         const result = data.replace(/spec-up-t-starterpack/g, dirName);
