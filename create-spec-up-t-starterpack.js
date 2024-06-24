@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 const { execSync } = require('child_process');
-const fs = require('fs');
+const fs = require('fs-extra');
 const path = require('path');
 
 // Function to copy /spec directory, specs.json, and README.md to the target directory
