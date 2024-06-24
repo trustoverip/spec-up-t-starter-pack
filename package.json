@@ -4,5 +4,8 @@
   "description": "Quick setup for a specification with the Spec-Up-T tool.",
   "bin": {
     "create-spec-up-t": "create-spec-up-t-starterpack.js"
+  },
+  "dependencies": {
+    "fs-extra": "^10.0.0"
   }
 }
