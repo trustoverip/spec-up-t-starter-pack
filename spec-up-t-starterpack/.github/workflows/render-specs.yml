@@ -1,10 +1,10 @@
 
-name: spec-up-t-render
+name: spec-up-t render
 
 on:
-  push:
-    branches:
-      - main
+  # push:
+  #   branches:
+  #     - main
   workflow_dispatch:
 
 jobs:
@@ -30,9 +30,6 @@ jobs:
           echo "end install"
           echo "Spec-Up-T version:"
           npm list spec-up-t
-          echo "start fetching xrefs"
-          node -e "require('spec-up-t/src/get-xrefs-data.js').getXrefsData()"
-          echo "end fetching xrefs"
           echo "start render"
           node -e "require('spec-up-t')({ nowatch: true })"
           echo "end render"
