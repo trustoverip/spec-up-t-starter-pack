@@ -14,8 +14,8 @@
                 "terms-definitions/term-4.md",
                 "outro.md"
             ],
-            "logo": "https://raw.githubusercontent.com/trustoverip/logo-assets/master/logos/ToIP-Logo-Color-SolidDimensional-Horizontal-LightOnDark.svg",
-            "logo_link": "https://github.com/trustoverip/specification-template",
+            "logo": "../logo.svg",
+            "logo_link": "https://github.com/blockchainbird/spec-up-t",
             "katex": false,
             "source": {
                 "host": "github",
