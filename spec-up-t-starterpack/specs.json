@@ -16,7 +16,6 @@
             ],
             "logo": "../logo.svg",
             "logo_link": "https://github.com/blockchainbird/spec-up-t",
-            "katex": false,
             "source": {
                 "host": "github",
                 "account": "blockchainbird",
@@ -64,6 +63,7 @@
                     "module": true
                 }
             ],
+            "katex": false,
             "searchHighlightStyle": "ssi"
         }
     ]
