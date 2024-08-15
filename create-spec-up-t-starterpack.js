@@ -31,7 +31,7 @@ async function setupSpecUpTStarterPack(dirName) {
         const result = data.replace(/spec-up-t-starterpack/g, dirName);
         await fs.writeFile(readmeFile, result, 'utf8');
 
-        console.log(`Spec-Up-T starterpack setup complete.\n\nNow cd into the directory that you just created and run "npm install" to install dependencies:\n\ncd ${dirName}\n\nnpm install`);
+        console.log(`Spec-Up-T setup complete.\n\nNow cd into the directory that you just created and run "npm install" to install dependencies:\n\ncd ${dirName}\n\nnpm install`);
     } catch (err) {
         console.error(err);
     }
