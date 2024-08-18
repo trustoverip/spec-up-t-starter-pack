@@ -4,7 +4,6 @@ const { execSync } = require('child_process');
 const fs = require('fs-extra');
 const path = require('path');
 const { setupCompleteMessage, errorDirExistsMessage } = require('./messages.js');
-console.log('setupCompleteMessage: ', setupCompleteMessage);
 
 // Now you can use setupCompleteMessage in this file
 
