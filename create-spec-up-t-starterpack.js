@@ -3,6 +3,9 @@
 const { execSync } = require('child_process');
 const fs = require('fs-extra');
 const path = require('path');
+const { setupCompleteMessage } = require('./messages');
+
+// Now you can use setupCompleteMessage in this file
 
 // Function to copy /spec directory, specs.json, and README.md to the target directory
 async function setupSpecUpTStarterPack(dirName) {
@@ -31,7 +34,7 @@ async function setupSpecUpTStarterPack(dirName) {
         const result = data.replace(/spec-up-t-starterpack/g, dirName);
         await fs.writeFile(readmeFile, result, 'utf8');
 
-        console.log(`Spec-Up-T setup complete.\n\nNow cd into the directory that you just created and run "npm install" to install dependencies:\n\ncd ${dirName}\n\nnpm install`);
+        console.log(setupCompleteMessage);
     } catch (err) {
         console.error(err);
     }
