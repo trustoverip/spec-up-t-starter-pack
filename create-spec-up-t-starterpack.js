@@ -3,7 +3,8 @@
 const { execSync } = require('child_process');
 const fs = require('fs-extra');
 const path = require('path');
-const { setupCompleteMessage, errorDirExistsMessage } = require('./messages');
+const { setupCompleteMessage, errorDirExistsMessage } = require('./messages.js');
+console.log('setupCompleteMessage: ', setupCompleteMessage);
 
 // Now you can use setupCompleteMessage in this file
 
@@ -17,7 +18,7 @@ async function setupSpecUpTStarterPack(dirName) {
     try {
         // Check if source files and directories exist
         if (await fs.existsSync(targetDir)) {
-            console.error(errorDirExistsMessage[1], dirName, errorDirExistsMessage[2]);
+            console.error(errorDirExistsMessage[1] + dirName + errorDirExistsMessage[2]);
             process.exit(1);
         }
 
@@ -34,7 +35,7 @@ async function setupSpecUpTStarterPack(dirName) {
         const result = data.replace(/spec-up-t-starterpack/g, dirName);
         await fs.writeFile(readmeFile, result, 'utf8');
 
-        console.log(setupCompleteMessage[1], dirName, setupCompleteMessage[2]);
+        console.log(setupCompleteMessage[1] + dirName + setupCompleteMessage[2]);
     } catch (err) {
         console.error(err);
     }
