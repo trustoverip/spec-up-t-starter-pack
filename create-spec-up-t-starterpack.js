@@ -18,7 +18,7 @@ async function setupSpecUpTStarterPack(dirName) {
     try {
         // Check if source files and directories exist
         if (await fs.existsSync(targetDir)) {
-            console.error(errorDirExistsMessage[1] + dirName + errorDirExistsMessage[2]);
+            console.error(errorDirExistsMessage[0] + dirName + errorDirExistsMessage[1]);
             process.exit(1);
         }
 
@@ -35,7 +35,7 @@ async function setupSpecUpTStarterPack(dirName) {
         const result = data.replace(/spec-up-t-starterpack/g, dirName);
         await fs.writeFile(readmeFile, result, 'utf8');
 
-        console.log(setupCompleteMessage[1] + dirName + setupCompleteMessage[2]);
+        console.log(setupCompleteMessage[0] + dirName + setupCompleteMessage[1]);
     } catch (err) {
         console.error(err);
     }
