@@ -10,6 +10,6 @@
     "render": "node -e \"require('spec-up-t')({ nowatch: true })\"",
     "dev": "node -e \"require('spec-up-t')({ dev: true })\"",
     "xrefs": "node -e \"require('spec-up-t/src/get-xrefs-data.js').getXrefsData()\"",
-    "validatespec": "node -e \"require('spec-up-t/src/json-key-validatorjs').runJsonKeyValidatorSync()\""
+    "validatespec": "node -e \"require('spec-up-t/src/json-key-validator.js').runJsonKeyValidatorSync()\""
   }
 }
