@@ -10,6 +10,7 @@
     "render": "node -e \"require('spec-up-t')({ nowatch: true })\"",
     "dev": "node -e \"require('spec-up-t')({ dev: true })\"",
     "xrefs": "node -e \"require('spec-up-t/src/get-xrefs-data.js').getXrefsData()\"",
+    "removexref": "node -e \"const [,, term, externalSpec] = process.argv; require('spec-up-t/src/get-xrefs-data.js').removeXref(term, externalSpec);\"",
     "validatespec": "node -e \"require('spec-up-t/src/json-key-validator.js').runJsonKeyValidatorSync()\""
   }
 }
