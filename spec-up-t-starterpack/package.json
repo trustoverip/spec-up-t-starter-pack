@@ -15,6 +15,6 @@
     "validatespec": "node -e \"require('spec-up-t/src/json-key-validator.js').runJsonKeyValidatorSync()\"",
     "help": "cat help.txt",
     "menu": "sh ./main.sh",
-    "postinstall": "echo 'Setup complete! Now run this command to start the menu: npm run menu'"
+    "postinstall": "echo '\n\n\n   ==========\n   Setup complete! Now run this command to start the menu: npm run menu\n\n\n   ==========\n\n\n'"
   }
 }
