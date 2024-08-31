@@ -13,7 +13,6 @@ async function setupSpecUpTStarterPack(dirName) {
     const sourceDir = path.join(__dirname, 'spec-up-t-starterpack');
     const targetDir = path.join(process.cwd(), dirName);
     const readmeFile = path.join(targetDir, 'README.md');
-    const mainScript = path.join(targetDir, 'main.sh');
 
     try {
         // Check if source files and directories exist
@@ -34,9 +33,6 @@ async function setupSpecUpTStarterPack(dirName) {
         let data = await fs.readFile(readmeFile, 'utf8');
         const result = data.replace(/spec-up-t-starterpack/g, dirName);
         await fs.writeFile(readmeFile, result, 'utf8');
-
-        // Set execute permissions on main.sh, this is necessary to run the script from the command line called by the npm script
-        await fs.chmod(mainScript, 0o755);
 
         console.log(setupCompleteMessage[0] + dirName + setupCompleteMessage[1]);
     } catch (err) {
