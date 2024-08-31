@@ -16,6 +16,6 @@
     "help": "cat help.txt",
     "menu": "sh ./main.sh",
     "postinstall": "npm run postinstall:final",
-    "postinstall:final": "echo '\n\n\n   Type the following and press ENTER: npm run menu\n\n\n'"
+    "postinstall:final": "node postinstall-message.js"
   }
 }
