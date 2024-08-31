@@ -34,6 +34,9 @@ async function setupSpecUpTStarterPack(dirName) {
         const result = data.replace(/spec-up-t-starterpack/g, dirName);
         await fs.writeFile(readmeFile, result, 'utf8');
 
+        // Set execute permissions on main.sh, this is necessary to run the script from the command line called by the npm script
+        await fs.chmod(mainScript, 0o755);
+
         console.log(setupCompleteMessage[0] + dirName + setupCompleteMessage[1]);
     } catch (err) {
         console.error(err);
