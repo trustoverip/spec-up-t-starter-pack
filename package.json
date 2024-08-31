@@ -7,5 +7,8 @@
   },
   "dependencies": {
     "fs-extra": "^10.0.0"
+  },
+  "scripts": {
+    "postinstall": "echo 'Setup complete! Now run this command to start the menu: npm run menu'"
   }
 }
