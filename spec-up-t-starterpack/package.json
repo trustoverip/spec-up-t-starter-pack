@@ -14,6 +14,7 @@
     "removexref": "node remove-xref.js",
     "validatespec": "node -e \"require('spec-up-t/src/json-key-validator.js').runJsonKeyValidatorSync()\"",
     "help": "cat help.txt",
-    "menu": "sh ./main.sh"
+    "menu": "sh ./main.sh",
+    "postinstall": "echo 'Setup complete! Now run this command to start the menu: npm run menu'"
   }
 }
