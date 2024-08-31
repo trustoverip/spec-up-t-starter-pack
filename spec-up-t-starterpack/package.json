@@ -13,6 +13,7 @@
     "topdf": "node -e \"require('spec-up-t/src/create-pdf.js')\"",
     "removexref": "node remove-xref.js",
     "validatespec": "node -e \"require('spec-up-t/src/json-key-validator.js').runJsonKeyValidatorSync()\"",
-    "help": "cat help.txt"
+    "help": "cat help.txt",
+    "menu": "sh ./main.sh"
   }
 }
