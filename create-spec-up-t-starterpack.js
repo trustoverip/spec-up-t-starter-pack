@@ -13,6 +13,7 @@ async function setupSpecUpTStarterPack(dirName) {
     const sourceDir = path.join(__dirname, 'spec-up-t-starterpack');
     const targetDir = path.join(process.cwd(), dirName);
     const readmeFile = path.join(targetDir, 'README.md');
+    const mainScript = path.join(targetDir, 'main.sh');
 
     try {
         // Check if source files and directories exist
