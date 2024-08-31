@@ -16,6 +16,6 @@
     "help": "cat help.txt",
     "menu": "sh ./main.sh",
     "postinstall": "npm run postinstall:final",
-    "postinstall:final": "./main.sh"
+    "postinstall:final": "node run-main.js"
   }
 }
