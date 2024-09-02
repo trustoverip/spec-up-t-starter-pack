@@ -6,7 +6,7 @@ function handle_choice() {
         echo " "
         echo " "
         echo "  ************************************"
-        echo "  Render index.html"
+        echo "  Render specification"
         echo "  ************************************"
         echo " "
         echo " "
@@ -16,7 +16,7 @@ function handle_choice() {
         echo " "
         echo " "
         echo "  ************************************"
-        echo "  Create PDF"
+        echo "  Export to PDF"
         echo "  ************************************"
         echo " "
         echo " "
@@ -26,7 +26,7 @@ function handle_choice() {
         echo " "
         echo " "
         echo "  ************************************"
-        echo "  Lookup xrefs"
+        echo "  Look up xrefs"
         echo "  ************************************"
         echo " "
         echo " "
@@ -36,7 +36,7 @@ function handle_choice() {
         echo " "
         echo " "
         echo "  ************************************"
-        echo "  Validate specs.json"
+        echo "  Validate config file"
         echo "  ************************************"
         echo " "
         echo " "
@@ -46,7 +46,17 @@ function handle_choice() {
         echo " "
         echo " "
         echo "  ************************************"
-        echo "  Help"
+        echo "  Add new terms"
+        echo "  ************************************"
+        echo " "
+        echo " "
+        show_progress
+        do_addterms
+    elif [[ "$choice" == "6" ]]; then
+        echo " "
+        echo " "
+        echo "  ************************************"
+        echo "  Open documentation website"
         echo "  ************************************"
         echo " "
         echo " "
@@ -102,7 +112,8 @@ function display_intro() {
     echo "   [2] Export to PDF"
     echo "   [3] Look up xrefs"
     echo "   [4] Validate config file"
-    echo "   [5] Open documentation website"
+    echo "   [5] Add new terms"
+    echo "   [6] Open documentation website"
     echo "   [Q] Quit"
     echo " "
     echo " "
@@ -134,6 +145,11 @@ function do_xrefs() {
 function do_validatespec() {
     clear
     npm run validatespec
+}
+
+function do_addterms() {
+    clear
+    npm run addterms
 }
 
 function do_help() {
