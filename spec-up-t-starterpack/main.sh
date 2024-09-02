@@ -157,11 +157,11 @@ function do_help() {
     echo "\n\n\n   You will be redirected to the documentation website\n\n   (https://blockchainbird.github.io/spec-up-t-website/)."
     sleep 2
     if [[ "$OSTYPE" == "darwin"* ]]; then
-        open "https://blockchainbird.github.io/spec-up-t-website/"
+        open "https://blockchainbird.github.io/spec-up-t-website/docs/cheat-sheet/#start-command-line-menu"
     elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
-        xdg-open "https://blockchainbird.github.io/spec-up-t-website/"
+        xdg-open "https://blockchainbird.github.io/spec-up-t-website/docs/cheat-sheet/#start-command-line-menu"
     elif [[ "$OSTYPE" == "cygwin" || "$OSTYPE" == "msys" || "$OSTYPE" == "win32" ]]; then
-        start "https://blockchainbird.github.io/spec-up-t-website/"
+        start "https://blockchainbird.github.io/spec-up-t-website/docs/cheat-sheet/#start-command-line-menu"
     else
         echo "Unsupported OS."
     fi
