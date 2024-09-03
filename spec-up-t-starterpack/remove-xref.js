@@ -17,12 +17,29 @@
  *
  * @requires spec-up-t/src/get-xrefs-data.js
  * @function removeXref
- * @param {string} term - The term to be removed from the cross-reference list.
- * @param {string} externalSpec - The path to the external specification file.
  */
 
 
-const args = process.argv.slice(2);
-const term = args[0];
-const externalSpec = args[1];
-require('spec-up-t/src/get-xrefs-data.js').removeXref(term, externalSpec);
+
+// // Version A: Get the term and external specification from the command line arguments
+// const args = process.argv.slice(2);
+// const term = args[0];
+// const externalSpec = args[1];
+// require('spec-up-t/src/get-xrefs-data.js').removeXref(term, externalSpec);
+
+
+// Version B: Get the term and external specification via step by step questions (interactive)
+const readline = require('readline');
+const removeXref = require('spec-up-t/src/get-xrefs-data.js').removeXref;
+
+const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+});
+
+rl.question('Enter the term: ', (term) => {
+    rl.question('Enter the external specification: ', (externalSpec) => {
+        removeXref(term, externalSpec);
+        rl.close();
+    });
+});
