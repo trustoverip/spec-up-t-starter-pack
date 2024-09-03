@@ -36,13 +36,23 @@ function handle_choice() {
         echo " "
         echo " "
         echo "  ************************************"
+        echo "  Remove xref"
+        echo "  ************************************"
+        echo " "
+        echo " "
+        show_progress
+        do_removexref
+    elif [[ "$choice" == "5" ]]; then
+        echo " "
+        echo " "
+        echo "  ************************************"
         echo "  Validate config file"
         echo "  ************************************"
         echo " "
         echo " "
         show_progress
         do_validatespec
-    elif [[ "$choice" == "5" ]]; then
+    elif [[ "$choice" == "6" ]]; then
         echo " "
         echo " "
         echo "  ************************************"
@@ -52,7 +62,7 @@ function handle_choice() {
         echo " "
         show_progress
         do_addterms
-    elif [[ "$choice" == "6" ]]; then
+    elif [[ "$choice" == "7" ]]; then
         echo " "
         echo " "
         echo "  ************************************"
@@ -111,9 +121,10 @@ function display_intro() {
     echo "   [1] Render specification"
     echo "   [2] Export to PDF"
     echo "   [3] Look up xrefs"
-    echo "   [4] Validate config file"
-    echo "   [5] Add new terms"
-    echo "   [6] Open documentation website"
+    echo "   [4] Remove xref"
+    echo "   [5] Validate config file"
+    echo "   [6] Add new terms"
+    echo "   [7] Open documentation website"
     echo "   [Q] Quit"
     echo " "
     echo " "
@@ -122,7 +133,7 @@ function display_intro() {
 
 # Function to prompt the user for input
 function prompt_input() {
-    read -n 1 -r -p "  Enter your choice (1/2/3/4/5/6/Q)? " choice
+    read -n 1 -r -p "  Enter your choice (1/2/3/4/5/6/7/Q)? " choice
     echo  # Empty line below the prompt
     echo  # Empty line below the prompt
 }
@@ -140,6 +151,11 @@ function do_topdf() {
 function do_xrefs() {
     clear
     npm run xrefs
+}
+
+function do_removexref() {
+    clear
+    npm run removexref
 }
 
 function do_validatespec() {
