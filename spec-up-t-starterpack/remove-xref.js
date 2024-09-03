@@ -39,7 +39,7 @@ const rl = readline.createInterface({
 
 rl.question('Enter the term: ', (term) => {
     rl.question('Enter the external specification: ', (externalSpec) => {
-        const messages = removeXref(term, externalSpec);
+        removeXref(term, externalSpec);
         messages.forEach(message => console.log(message));
         rl.close();
     });
