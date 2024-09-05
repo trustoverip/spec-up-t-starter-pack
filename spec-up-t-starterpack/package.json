@@ -15,7 +15,7 @@
     "validatespec": "node -e \"require('spec-up-t/src/json-key-validator.js').runJsonKeyValidatorSync()\"",
     "addterms": "node -e \"require('spec-up-t/src/create-term-index.js').createTermIndex()\"",
     "help": "cat help.txt",
-    "menu": "sh ./main.sh",
+    "menu": "bash ./main.sh",
     "postinstall": "npm run postinstall:final",
     "postinstall:final": "node postinstall-message.js && npm run printmessage",
     "printmessage": "sleep 2 && node postinstall-message.js"
