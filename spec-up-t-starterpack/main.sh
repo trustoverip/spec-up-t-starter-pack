@@ -181,7 +181,6 @@ function do_help() {
     else
         echo "Unsupported OS."
     fi
-    # ;;
 }
 
 
