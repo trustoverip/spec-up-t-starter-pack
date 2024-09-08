@@ -1,6 +1,6 @@
 {
   "name": "spec-up-t-starterpack",
-  "version": "1.0.48",
+  "version": "1.0.49",
   "description": "Quick setup for a specification with the Spec-Up-T tool.",
   "dependencies": {
     "dotenv": "^16.4.5",
