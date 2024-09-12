@@ -72,7 +72,16 @@ function handle_choice() {
         echo " "
         show_progress
         do_help
-
+    elif [[ "$choice" == "8" ]]; then
+        echo " "
+        echo " "
+        echo "  ************************************"
+        echo "  Freeze specification"
+        echo "  ************************************"
+        echo " "
+        echo " "
+        show_progress
+        do_freeze
 
     # # Example of confirmation prompt
     # elif [[ "$choice" == "4" ]]; then
@@ -125,6 +134,7 @@ function display_intro() {
     echo "   [5] Validate config file"
     echo "   [6] Add new terms"
     echo "   [7] Open documentation website"
+    echo "   [8] Freeze specification"
     echo "   [Q] Quit"
     echo " "
     echo " "
@@ -166,6 +176,11 @@ function do_validatespec() {
 function do_addterms() {
     clear
     npm run addterms
+}
+
+function do_freeze() {
+    clear
+    npm run freeze
 }
 
 function do_help() {
