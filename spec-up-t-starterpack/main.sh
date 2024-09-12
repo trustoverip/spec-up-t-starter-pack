@@ -110,8 +110,11 @@ function handle_choice() {
         echo " "
         echo " "
     fi
-
-    echo "\n\n\n  Type 'npm run menu' to return to the main menu."
+    echo " "
+    echo " "
+    echo " "
+    echo "   SPEC-UP-T: Type 'npm run menu' to return to the main menu."
+    echo " "
 }
 
 # Function to display the introduction text
