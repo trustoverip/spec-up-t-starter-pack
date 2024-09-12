@@ -19,6 +19,7 @@
     "menu": "bash ./main.sh",
     "postinstall": "npm run postinstall:final",
     "postinstall:final": "node postinstall-message.js && npm run printmessage",
-    "printmessage": "sleep 2 && node postinstall-message.js"
+    "printmessage": "sleep 2 && node postinstall-message.js",
+    "freeze": "node -e \"require('spec-up-t/src/freeze.js')\""
   }
 }
