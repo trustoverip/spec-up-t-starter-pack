@@ -2,6 +2,17 @@
 
 # Function to handle the user's choice
 function handle_choice() {
+    elif [[ "$choice" == "0" ]]; then
+        echo " "
+        echo " "
+        echo "  ************************************"
+        echo "  Publish (= Add terms, create pdf, look up xrefs and create spec)"
+        echo "  ************************************"
+        echo " "
+        echo " "
+        show_progress
+        do_publish
+
     if [[ "$choice" == "1" ]]; then
         echo " "
         echo " "
@@ -130,6 +141,7 @@ function display_intro() {
     echo " "
     echo "  Please choose one of the following options:"
     echo " "
+    echo "   [0] Publish ([6]+[2]+[3]+[1]"
     echo "   [1] Render specification"
     echo "   [2] Export to PDF"
     echo "   [3] Look up xrefs"
@@ -184,6 +196,11 @@ function do_addterms() {
 function do_freeze() {
     clear
     npm run freeze
+}
+
+function do_publish() {
+    clear
+    npm run publish
 }
 
 function do_help() {
