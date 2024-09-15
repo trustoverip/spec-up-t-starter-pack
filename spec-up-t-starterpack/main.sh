@@ -141,7 +141,7 @@ function display_intro() {
     echo " "
     echo "  Please choose one of the following options:"
     echo " "
-    echo "   [0] Publish (= [6]+[2]+[3]+[1]"
+    echo "   [0] Publish ¹"
     echo "   "
     echo "   [1] Render specification"
     echo "   [2] Export to PDF"
@@ -154,12 +154,13 @@ function display_intro() {
     echo "   [Q] Quit"
     echo " "
     echo " "
+    echo "   ¹ Publish = [6]+[2]+[3]+[1]"
 
 }
 
 # Function to prompt the user for input
 function prompt_input() {
-    read -n 1 -r -p "  Enter your choice (0/1/2/3/4/5/6/7/8/Q)? " choice
+    read -n 1 -r -p "   Enter your choice (0/1/2/3/4/5/6/7/8/Q)? " choice
     echo  # Empty line below the prompt
     echo  # Empty line below the prompt
 }
