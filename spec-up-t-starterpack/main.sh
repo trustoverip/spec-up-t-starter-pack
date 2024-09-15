@@ -2,7 +2,7 @@
 
 # Function to handle the user's choice
 function handle_choice() {
-    elif [[ "$choice" == "0" ]]; then
+    if [[ "$choice" == "0" ]]; then
         echo " "
         echo " "
         echo "  ************************************"
@@ -13,7 +13,7 @@ function handle_choice() {
         show_progress
         do_publish
 
-    if [[ "$choice" == "1" ]]; then
+    elif [[ "$choice" == "1" ]]; then
         echo " "
         echo " "
         echo "  ************************************"
