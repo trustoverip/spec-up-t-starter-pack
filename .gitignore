@@ -4,7 +4,6 @@ dist
 *.bak
 *.tmp
 .DS_Store
-.env
 coverage
 build
 .history
