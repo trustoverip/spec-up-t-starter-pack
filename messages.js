@@ -2,7 +2,7 @@
 const setupCompleteMessage = [
 
     `Spec-Up-T setup complete.\n\n
-Read more about Spec-Up-T on https://blockchainbird.github.io/spec-up-t-website/\n\n
+Read more about Spec-Up-T on https://trustoverip.github.io/spec-up-t-website/\n\n
 Now cd into the directory that you just created and run "npm install" to install dependencies:\n\n
 cd `,
 
