@@ -209,7 +209,7 @@ graph TD
 ### Charts
 
 <pre>
-```
+```js
 {
   "type": "pie",
   "data": {
@@ -242,7 +242,7 @@ graph TD
 ```
 </pre>
 
-```
+```js
 {
   "type": "pie",
   "data": {
