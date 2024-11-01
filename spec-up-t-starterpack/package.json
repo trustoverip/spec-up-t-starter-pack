@@ -8,7 +8,7 @@
   },
   "scripts": {
     "edit": "node -e \"require('spec-up-t')()\"",
-    "render": "node -e \"require('spec-up-t')({ nowatch: true })\"",
+    "render": "node --no-warnings -e \"require('spec-up-t')({ nowatch: true })\"",
     "dev": "node -e \"require('spec-up-t')({ dev: true })\"",
     "xrefs": "GITHUB_API_TOKEN=$(grep GITHUB_API_TOKEN .env | cut -d '=' -f2) node -e \"require('spec-up-t/src/get-xrefs-data.js').getXrefsData(process.env.GITHUB_API_TOKEN)\"",
     "topdf": "node -e \"require('spec-up-t/src/create-pdf.js')\"",
