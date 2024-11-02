@@ -5,42 +5,66 @@ const fs = require('fs-extra');
 const path = require('path');
 const { setupCompleteMessage, errorDirExistsMessage } = require('./messages.js');
 
-// Now you can use setupCompleteMessage in this file
-
-// Function to copy /spec directory, specs.json, and README.md to the target directory
-async function setupSpecUpTStarterPack(dirName) {
-    // The directory that will be the source for the starter pack
+// Main setup function
+async function setupSpecPack(dirName) {
     const sourceDir = path.join(__dirname, 'spec-up-t-starterpack');
     const targetDir = path.join(process.cwd(), dirName);
-    const readmeFile = path.join(targetDir, 'README.md');
 
     try {
-        // Check if source files and directories exist
-        if (await fs.existsSync(targetDir)) {
-            console.error(errorDirExistsMessage[0] + dirName + errorDirExistsMessage[1]);
+        if (fs.existsSync(targetDir)) {
+            console.error(`${errorDirExistsMessage[0]}${dirName}${errorDirExistsMessage[1]}`);
             process.exit(1);
         }
 
-        // Copy 'spec-up-starterpack' directory
-        await fs.copy(sourceDir, targetDir);
+        // Copying starter pack files
+        await copyStarterPack(sourceDir, targetDir);
+        await renameGitignore(targetDir);
+        await updateReadme(dirName, targetDir);
 
-        // Rename path.join(sourceDir, 'gitignore') to path.join(targetDir, '.gitignore')
-        if (await fs.existsSync(path.join(targetDir, 'gitignore'))) {
-            await fs.rename(path.join(targetDir, 'gitignore'), path.join(targetDir, '.gitignore'));
-        }
+        // Check for package manager and install dependencies
+        const packageManager = checkPackageManager();
+        console.log(`Using ${packageManager} to install dependencies.`);
+        execSync(`${packageManager} install`, { cwd: targetDir, stdio: 'inherit' });
 
-        // Replace'spec-up-t-starterpack' with the name of the target directory in README.md
-        let data = await fs.readFile(readmeFile, 'utf8');
-        const result = data.replace(/spec-up-t-starterpack/g, dirName);
-        await fs.writeFile(readmeFile, result, 'utf8');
-
-        console.log(setupCompleteMessage[0] + dirName + setupCompleteMessage[1]);
+        // console.log(`${setupCompleteMessage[0]}${dirName}${setupCompleteMessage[1]}`);
     } catch (err) {
-        console.error(err);
+        console.error('Error during setup:', err);
+        process.exit(1);
     }
 }
 
-// Get the target directory from command line arguments or use current directory
-const dirName = process.argv[2] || 'spec-up-t-starterpack';
+// Helper function to copy files
+async function copyStarterPack(source, target) {
+    await fs.copy(source, target);
+}
 
-setupSpecUpTStarterPack(dirName);
+// Helper function to rename gitignore
+async function renameGitignore(targetDir) {
+    const gitignorePath = path.join(targetDir, 'gitignore');
+    const dotGitignorePath = path.join(targetDir, '.gitignore');
+    if (await fs.existsSync(gitignorePath)) {
+        await fs.rename(gitignorePath, dotGitignorePath);
+    }
+}
+
+// Helper function to update README
+async function updateReadme(dirName, targetDir) {
+    const readmeFile = path.join(targetDir, 'README.md');
+    const data = await fs.readFile(readmeFile, 'utf8');
+    const result = data.replace(/spec-up-t-starterpack/g, dirName);
+    await fs.writeFile(readmeFile, result, 'utf8');
+}
+
+// Function to check for available package manager
+function checkPackageManager() {
+    try {
+        execSync('yarn --version', { stdio: 'ignore' });
+        return 'yarn';
+    } catch (e) {
+        return 'npm';
+    }
+}
+
+// Start setup process with provided directory name
+const dirName = process.argv[2] || 'spec-up-t-starterpack';
+setupSpecPack(dirName);
