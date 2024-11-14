@@ -63,16 +63,6 @@ function handle_choice() {
         echo " "
         show_progress
         do_validatespec
-    elif [[ "$choice" == "6" ]]; then
-        echo " "
-        echo " "
-        echo "  ************************************"
-        echo "  Add new terms"
-        echo "  ************************************"
-        echo " "
-        echo " "
-        show_progress
-        do_addterms
     elif [[ "$choice" == "7" ]]; then
         echo " "
         echo " "
@@ -148,7 +138,6 @@ function display_intro() {
     echo "   [3] Look up xrefs"
     echo "   [4] Remove xref"
     echo "   [5] Validate config file"
-    echo "   [6] Add new terms"
     echo "   [7] Open documentation website"
     echo "   [8] Freeze specification"
     echo "   [Q] Quit"
@@ -188,11 +177,6 @@ function do_removexref() {
 function do_validatespec() {
     clear
     npm run validatespec
-}
-
-function do_addterms() {
-    clear
-    npm run addterms
 }
 
 function do_freeze() {

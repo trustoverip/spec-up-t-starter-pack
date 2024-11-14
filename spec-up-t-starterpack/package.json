@@ -15,7 +15,6 @@
     "removexref": "node remove-xref.js",
     "topdf": "node -e \"require('spec-up-t/src/create-pdf.js')\"",
     "validatespec": "node -e \"require('spec-up-t/src/json-key-validator.js').runJsonKeyValidatorSync()\"",
-    "addterms": "node -e \"require('spec-up-t/src/create-term-index.js').createTermIndex()\"",
     "freeze": "node -e \"require('spec-up-t/src/freeze.js')\"",
     "references": "node -e \"require('spec-up-t/src/references.js')\"",
     "help": "cat help.txt",
