@@ -3,6 +3,7 @@
         {
             "title": "Spec-Up-T Starterpack",
             "description": "Create technical specifications in markdown. Based on the original Spec-Up, extended with Terminology tooling",
+            "author": "Trust over IP Foundation",
             "spec_directory": "./spec",
             "spec_terms_directory": "terms-definitions",
             "output_path": "./docs",
