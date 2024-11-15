@@ -23,20 +23,14 @@
             },
             "external_specs": [
                 {
-                    "test-1": "https://blockchainbird.github.io/spec-up-xref-test-1/"
-                },
-                {
-                    "test-2": "https://blockchainbird.github.io/spec-up-xref-test-2/"
-                }
-            ],
-            "external_specs_repos": [
-                {
                     "external_spec": "test-1",
+                    "gh-page": "https://blockchainbird.github.io/spec-up-xref-test-1/",
                     "url": "https://github.com/blockchainbird/spec-up-xref-test-1",
                     "terms_dir": "spec/term-definitions"
                 },
                 {
                     "external_spec": "test-2",
+                    "gh-page": "https://blockchainbird.github.io/spec-up-xref-test-2/",
                     "url": "https://github.com/blockchainbird/spec-up-xref-test-2",
                     "terms_dir": "spec/term-definitions"
                 }
