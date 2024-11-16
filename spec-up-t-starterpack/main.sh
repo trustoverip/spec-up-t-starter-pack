@@ -2,18 +2,7 @@
 
 # Function to handle the user's choice
 function handle_choice() {
-    if [[ "$choice" == "0" ]]; then
-        echo " "
-        echo " "
-        echo "  ************************************"
-        echo "  Publish (= Add terms, create pdf, look up xrefs and create spec)"
-        echo "  ************************************"
-        echo " "
-        echo " "
-        show_progress
-        do_publish
-
-    elif [[ "$choice" == "1" ]]; then
+    if [[ "$choice" == "1" ]]; then
         echo " "
         echo " "
         echo "  ************************************"
@@ -121,8 +110,6 @@ function display_intro() {
     echo " "
     echo "  Please choose one of the following options:"
     echo " "
-    echo "   [0] Publish ¹"
-    echo "   "
     echo "   [1] Render specification"
     echo "   [2] Export to PDF"
     echo "   [3] Look up xrefs"
@@ -131,14 +118,11 @@ function display_intro() {
     echo "   [8] Freeze specification"
     echo "   [Q] Quit"
     echo " "
-    echo " "
-    echo "   ¹ Publish = [6]+[2]+[3]+[1]"
-
 }
 
 # Function to prompt the user for input
 function prompt_input() {
-    read -n 1 -r -p "   Enter your choice (0/1/2/3/4/7/8/Q)? " choice
+    read -n 1 -r -p "   Enter your choice (1/2/3/4/7/8/Q)? " choice
     echo  # Empty line below the prompt
     echo  # Empty line below the prompt
 }
@@ -166,11 +150,6 @@ function do_removexref() {
 function do_freeze() {
     clear
     npm run freeze
-}
-
-function do_publish() {
-    clear
-    npm run publish
 }
 
 function do_help() {
