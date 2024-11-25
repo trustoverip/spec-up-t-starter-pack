@@ -139,7 +139,7 @@ function do_topdf() {
 
 function do_xrefs() {
     clear
-    npm run xrefs
+    npm run addxref
 }
 
 function do_removexref() {
