@@ -11,7 +11,7 @@
     "edit": "node -e \"require('spec-up-t')()\"",
     "render": "node --no-warnings -e \"require('spec-up-t')({ nowatch: true })\"",
     "dev": "node -e \"require('spec-up-t')({ dev: true })\"",
-    "addxrefs": "node src/server/xref-add.js",
+    "addxref": "node src/server/xref-add.js",
     "removexref": "node src/server/xref-remove.js",
     "topdf": "node -e \"require('spec-up-t/src/create-pdf.js')\"",
     "freeze": "node -e \"require('spec-up-t/src/freeze.js')\"",
