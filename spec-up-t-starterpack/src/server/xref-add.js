@@ -25,13 +25,13 @@
 // const args = process.argv.slice(2);
 // const term = args[0];
 // const externalSpec = args[1];
-// require('spec-up-t/src/get-xrefs-data.js').getXrefsData(term, externalSpec);
+// require('spec-up-t/src/get-xrefs-data.js').addAllXrefs(term, externalSpec);
 
 
 // Version B: Get the term and external specification via step by step questions (interactive)
 require('dotenv').config();
 const readline = require('readline');
-const getXrefsData = require('spec-up-t/src/get-xrefs-data.js').getXrefsData;
+const addAllXrefs = require('spec-up-t/src/get-xrefs-data.js').addAllXrefs;
 
 const rl = readline.createInterface({
     input: process.stdin,
@@ -40,7 +40,7 @@ const rl = readline.createInterface({
 
 rl.question('Enter the term: ', (term) => {
     rl.question('Enter the external specification: ', (externalSpec) => {
-        getXrefsData(process.env.GITHUB_API_TOKEN);
+        addAllXrefs(process.env.GITHUB_API_TOKEN);
         rl.close();
     });
 });
