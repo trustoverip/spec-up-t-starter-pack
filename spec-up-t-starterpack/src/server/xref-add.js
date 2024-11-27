@@ -29,6 +29,7 @@
 
 
 // Version B: Get the term and external specification via step by step questions (interactive)
+require('dotenv').config();
 const readline = require('readline');
 const getXrefsData = require('spec-up-t/src/get-xrefs-data.js').getXrefsData;
 
