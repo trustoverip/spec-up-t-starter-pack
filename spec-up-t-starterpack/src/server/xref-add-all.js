@@ -33,14 +33,4 @@ require('dotenv').config();
 const readline = require('readline');
 const addAllXrefs = require('spec-up-t/src/get-xrefs-data.js').addAllXrefs;
 
-const rl = readline.createInterface({
-    input: process.stdin,
-    output: process.stdout
-});
-
-rl.question('Enter the term: ', (term) => {
-    rl.question('Enter the external specification: ', (externalSpec) => {
-        addAllXrefs(process.env.GITHUB_API_TOKEN);
-        rl.close();
-    });
-});
+addAllXrefs(process.env.GITHUB_API_TOKEN);
