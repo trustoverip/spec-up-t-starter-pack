@@ -41,7 +41,7 @@ function handle_choice() {
         echo " "
         echo " "
         show_progress
-        do_removexref
+        do_xrefremove
     elif [[ "$choice" == "7" ]]; then
         echo " "
         echo " "
@@ -139,12 +139,12 @@ function do_topdf() {
 
 function do_xrefs() {
     clear
-    npm run addxref
+    npm run xrefaddall
 }
 
-function do_removexref() {
+function do_xrefremove() {
     clear
-    npm run removexref
+    npm run xrefremove
 }
 
 function do_freeze() {
