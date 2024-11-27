@@ -40,7 +40,7 @@ const rl = readline.createInterface({
 
 rl.question('Enter the term: ', (term) => {
     rl.question('Enter the external specification: ', (externalSpec) => {
-        getXrefsData(term, externalSpec);
+        getXrefsData(process.env.GITHUB_API_TOKEN);
         rl.close();
     });
 });
