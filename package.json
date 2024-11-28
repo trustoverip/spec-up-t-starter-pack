@@ -1,6 +1,6 @@
 {
   "name": "create-spec-up-t",
-  "version": "1.0.72",
+  "version": "1.0.73",
   "license": "Apache-2.0",
   "description": "Quick setup for a specification with the Spec-Up-T tool.",
   "bin": {
