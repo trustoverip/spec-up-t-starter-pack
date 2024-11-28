@@ -32,16 +32,6 @@ function handle_choice() {
         echo " "
         show_progress
         do_xrefs
-    elif [[ "$choice" == "4" ]]; then
-        echo " "
-        echo " "
-        echo "  ************************************"
-        echo "  Remove xref"
-        echo "  ************************************"
-        echo " "
-        echo " "
-        show_progress
-        do_xrefremove
     elif [[ "$choice" == "7" ]]; then
         echo " "
         echo " "
@@ -112,8 +102,9 @@ function display_intro() {
     echo " "
     echo "   [1] Render specification"
     echo "   [2] Export to PDF"
-    echo "   [3] Look up xrefs"
-    echo "   [4] Remove xref"
+    echo "   [3] Update xrefs"
+    echo "   (Add new xrefs, leave existing xrefs unchanged)"
+    echo "   "
     echo "   [7] Open documentation website"
     echo "   [8] Freeze specification"
     echo "   [Q] Quit"
@@ -139,12 +130,7 @@ function do_topdf() {
 
 function do_xrefs() {
     clear
-    npm run xrefaddall
-}
-
-function do_xrefremove() {
-    clear
-    npm run xrefremove
+    npm run xrefupdate
 }
 
 function do_freeze() {
