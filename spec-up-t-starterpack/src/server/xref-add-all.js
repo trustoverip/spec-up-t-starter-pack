@@ -19,6 +19,7 @@
  * @function addXref
  */
 
+require('dotenv').config();
 
 
 // // Version A: Get the term and external specification from the command line arguments
@@ -29,7 +30,6 @@
 
 
 // Version B: Get the term and external specification via step by step questions (interactive)
-require('dotenv').config();
 const readline = require('readline');
 const addAllXrefs = require('spec-up-t/src/get-xrefs-data.js').addAllXrefs;
 
