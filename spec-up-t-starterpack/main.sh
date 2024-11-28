@@ -113,7 +113,7 @@ function display_intro() {
 
 # Function to prompt the user for input
 function prompt_input() {
-    read -n 1 -r -p "   Enter your choice (1/2/3/4/7/8/Q)? " choice
+    read -n 1 -r -p "   Enter your choice (1/2/3/7/8/Q)? " choice
     echo  # Empty line below the prompt
     echo  # Empty line below the prompt
 }
