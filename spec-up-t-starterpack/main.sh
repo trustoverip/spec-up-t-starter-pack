@@ -103,7 +103,7 @@ function display_intro() {
     echo "   [1] Render specification"
     echo "   [2] Export to PDF"
     echo "   [3] Update xrefs"
-    echo "   (Add new xrefs, leave existing xrefs unchanged)"
+    echo "       (Add new xrefs, leave existing xrefs unchanged)"
     echo "   "
     echo "   [7] Open documentation website"
     echo "   [8] Freeze specification"
