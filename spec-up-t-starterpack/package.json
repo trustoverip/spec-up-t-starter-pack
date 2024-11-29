@@ -12,7 +12,7 @@
     "render": "node --no-warnings -e \"require('spec-up-t')({ nowatch: true })\"",
     "dev": "node -e \"require('spec-up-t')({ dev: true })\"",
     "xrefupdate": "node src/server/xref-update.js",
-    "xrefremove": "node src/server/xref-remove.js",
+    "xrefupdateall": "node src/server/xref-update-all.js",
     "topdf": "node -e \"require('spec-up-t/src/create-pdf.js')\"",
     "freeze": "node -e \"require('spec-up-t/src/freeze.js')\"",
     "references": "node -e \"require('spec-up-t/src/references.js')\"",
