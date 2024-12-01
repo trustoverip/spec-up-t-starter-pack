@@ -21,12 +21,11 @@ async function setupSpecPack(dirName) {
         await renameGitignore(targetDir);
         await updateReadme(dirName, targetDir);
 
-        // Check for package manager and install dependencies
-        const packageManager = checkPackageManager();
-        console.log(`Using ${packageManager} to install dependencies.`);
-        execSync(`${packageManager} install`, { cwd: targetDir, stdio: 'inherit' });
+        // Install dependencies with npm
+        console.log(`Using npm to install dependencies.`);
+        execSync(`npm install`, { cwd: targetDir, stdio: 'inherit' });
 
-        // console.log(`${setupCompleteMessage[0]}${dirName}${setupCompleteMessage[1]}`);
+        console.log(`${setupCompleteMessage[0]}${dirName}${setupCompleteMessage[1]}`);
     } catch (err) {
         console.error('Error during setup:', err);
         process.exit(1);
@@ -53,16 +52,6 @@ async function updateReadme(dirName, targetDir) {
     const data = await fs.readFile(readmeFile, 'utf8');
     const result = data.replace(/spec-up-t-starterpack/g, dirName);
     await fs.writeFile(readmeFile, result, 'utf8');
-}
-
-// Function to check for available package manager
-function checkPackageManager() {
-    try {
-        execSync('yarn --version', { stdio: 'ignore' });
-        return 'yarn';
-    } catch (e) {
-        return 'npm';
-    }
 }
 
 // Start setup process with provided directory name
