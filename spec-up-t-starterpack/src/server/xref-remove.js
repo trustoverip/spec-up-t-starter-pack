@@ -15,7 +15,7 @@
  * @example
  *   node remove-xref.js "Aal" "test-1"
  *
- * @requires spec-up-t/src/get-xrefs-data.js
+ * @requires spec-up-t/src/get-xtrefs-data.js
  * @function removeXref
  */
 
@@ -25,12 +25,12 @@
 // const args = process.argv.slice(2);
 // const term = args[0];
 // const externalSpec = args[1];
-// require('spec-up-t/src/get-xrefs-data.js').removeXref(term, externalSpec);
+// require('spec-up-t/src/get-xtrefs-data.js').removeXref(term, externalSpec);
 
 
 // Version B: Get the term and external specification via step by step questions (interactive)
 const readline = require('readline');
-const removeXref = require('spec-up-t/src/get-xrefs-data.js').removeXref;
+const removeXTref = require('spec-up-t/src/get-xtrefs-data.js').removeXref;
 
 const rl = readline.createInterface({
     input: process.stdin,
@@ -39,7 +39,7 @@ const rl = readline.createInterface({
 
 rl.question('Enter the term: ', (term) => {
     rl.question('Enter the external specification: ', (externalSpec) => {
-        removeXref(term, externalSpec);
+        removeXTref(term, externalSpec);
         rl.close();
     });
 });
