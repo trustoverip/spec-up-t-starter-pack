@@ -22,10 +22,18 @@ async function setupSpecPack(dirName) {
         await updateReadme(dirName, targetDir);
 
         // Install dependencies with npm
+        console.log(`${setupCompleteMessage[0]}`);
         console.log(`Using npm to install dependencies.`);
-        execSync(`npm install`, { cwd: targetDir, stdio: 'inherit' });
 
-        console.log(`${setupCompleteMessage[0]}${dirName}${setupCompleteMessage[1]}`);
+        // Suppress npm audit and fund messages in the project-specific .npmrc
+        const npmrcPath = path.join(targetDir, '.npmrc');
+        await fs.writeFile(npmrcPath, 'audit=false\nfund=false\n', 'utf8');
+
+        // Run npm install
+        // execSync(`npm install`, { cwd: targetDir, stdio: 'inherit' });
+        execSync(`npm install --silent`, { cwd: targetDir, stdio: 'inherit' });
+
+
     } catch (err) {
         console.error('Error during setup:', err);
         process.exit(1);
