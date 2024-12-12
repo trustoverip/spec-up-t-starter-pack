@@ -1,5 +1,5 @@
 require('dotenv').config();
 
-const updateXTrefs = require('spec-up-t/src/get-xtrefs-data.js').updateXTrefs;
+const updateXrefs = require('spec-up-t/src/get-xrefs-data.js').updateXrefs;
 
-updateXTrefs(process.env.GITHUB_API_TOKEN, false);
+updateXrefs(process.env.GITHUB_API_TOKEN, false);
