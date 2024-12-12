@@ -42,6 +42,16 @@ function handle_choice() {
         echo " "
         show_progress
         do_xrefs_update_all
+    elif [[ "$choice" == "5" ]]; then
+        echo " "
+        echo " "
+        echo "  ************************************"
+        echo "  Add or remove xref source"
+        echo "  ************************************"
+        echo " "
+        echo " "
+        show_progress
+        do_add_remove_xref_source
     elif [[ "$choice" == "7" ]]; then
         echo " "
         echo " "
@@ -114,6 +124,7 @@ function display_intro() {
     echo "   [2] Export to PDF"
     echo "   [3] Update new xrefs"
     echo "   [4] Update all xrefs"
+    echo "   [5] Add or remove xref source"
     echo "   [7] Open documentation website"
     echo "   [8] Freeze specification"
     echo "   [Q] Quit"
@@ -145,6 +156,11 @@ function do_xrefs_update() {
 function do_xrefs_update_all() {
     clear
     npm run xrefupdateall
+}
+
+function do_add_remove_xref_source() {
+    clear
+    npm run addremovexrefsource
 }
 
 function do_freeze() {
