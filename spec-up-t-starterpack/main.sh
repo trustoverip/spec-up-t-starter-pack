@@ -52,6 +52,16 @@ function handle_choice() {
         echo " "
         show_progress
         do_add_remove_xref_source
+    elif [[ "$choice" == "6" ]]; then
+        echo " "
+        echo " "
+        echo "  ************************************"
+        echo "  Configure this installation"
+        echo "  ************************************"
+        echo " "
+        echo " "
+        show_progress
+        do_configure
     elif [[ "$choice" == "7" ]]; then
         echo " "
         echo " "
@@ -125,6 +135,7 @@ function display_intro() {
     echo "   [3] Update new xrefs"
     echo "   [4] Update all xrefs"
     echo "   [5] Add or remove xref source"
+    echo "   [6] Configure"
     echo "   [7] Open documentation website"
     echo "   [8] Freeze specification"
     echo "   [Q] Quit"
@@ -161,6 +172,11 @@ function do_xrefs_update_all() {
 function do_add_remove_xref_source() {
     clear
     npm run addremovexrefsource
+}
+
+function do_configure() {
+    clear
+    npm run configure
 }
 
 function do_freeze() {
