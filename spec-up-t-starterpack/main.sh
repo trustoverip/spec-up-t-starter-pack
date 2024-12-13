@@ -186,14 +186,14 @@ function do_freeze() {
 
 function do_help() {
     clear
-    echo "\n\n\n   You will be redirected to the documentation website\n\n   (https://blockchainbird.github.io/spec-up-t-website/)."
+    echo -e "\n\n\n   You will be redirected to the documentation website\n\n   (https://trustoverip.github.io/spec-up-t-website/)."
     sleep 2
     if [[ "$OSTYPE" == "darwin"* ]]; then
-        open "https://blockchainbird.github.io/spec-up-t-website/docs/cheat-sheet/#start-command-line-menu"
+        open "https://trustoverip.github.io/spec-up-t-website/"
     elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
-        xdg-open "https://blockchainbird.github.io/spec-up-t-website/docs/cheat-sheet/#start-command-line-menu"
+        xdg-open "https://trustoverip.github.io/spec-up-t-website/"
     elif [[ "$OSTYPE" == "cygwin" || "$OSTYPE" == "msys" || "$OSTYPE" == "win32" ]]; then
-        start "https://blockchainbird.github.io/spec-up-t-website/docs/cheat-sheet/#start-command-line-menu"
+        start "https://trustoverip.github.io/spec-up-t-website/"
     else
         echo "Unsupported OS."
     fi
