@@ -46,7 +46,7 @@ function handle_choice() {
         echo " "
         echo " "
         echo "  ************************************"
-        echo "  Add or remove xref source"
+        echo "  Add, remove or view xref sources"
         echo "  ************************************"
         echo " "
         echo " "
