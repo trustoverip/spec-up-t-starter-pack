@@ -21,14 +21,16 @@ let mode = ""; // To track if user wants to add or remove
 
 // Function to prompt for mode
 function askMode() {
-    rl.question('Would you like to add or remove an entry? (add/remove): ', (answer) => {
+    rl.question('Would you like to add, remove, or view entries? (add/remove/view): ', (answer) => {
         mode = answer.trim().toLowerCase();
         if (mode === 'add' || mode === 'a') {
             askQuestion(0);
         } else if (mode === 'remove' || mode === 'r') {
             askRemoveEntry();
+        } else if (mode === 'view' || mode === 'v') {
+            showReferences();
         } else {
-            console.log('Invalid option. Please enter "add" or "remove".');
+            console.log('Invalid option. Please enter add, remove, or view.');
             askMode();
         }
     });
@@ -77,6 +79,22 @@ function askRemoveEntry() {
         removeEntry(answer.trim());
         rl.close();
     });
+}
+
+// Function to show current external references
+function showReferences() {
+    const data = JSON.parse(fs.readFileSync(JSON_FILE, 'utf8'));
+    console.log('\nCurrent external references (xref):\n\n');
+
+    data.specs[0].external_specs.forEach(spec => {
+        console.log('--- External Reference: ---');
+        console.log(`Short name: ${spec.external_spec}`);
+        console.log(`GitHub Page: ${spec.gh_page}`);
+        console.log(`URL: ${spec.url}`);
+        console.log(`Terms Directory: ${spec.terms_dir}`);
+        console.log('\n');
+    });
+    rl.close();
 }
 
 // Update the JSON file by adding an entry
