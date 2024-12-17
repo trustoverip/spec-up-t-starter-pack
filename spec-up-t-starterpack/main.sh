@@ -134,11 +134,13 @@ function display_intro() {
     echo "   [2] Export to PDF"
     echo "   [3] Update new xrefs"
     echo "   [4] Update all xrefs"
-    echo "   [5] Add or remove xref source"
+    echo "   [5] Add, remove or view xref source"
     echo "   [6] Configure"
     echo "   [7] Open documentation website"
     echo "   [8] Freeze specification"
     echo "   [Q] Quit"
+    echo " "
+    echo "   An xref is a reference to another repository."
     echo " "
 }
 
