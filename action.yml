@@ -2,7 +2,7 @@ name: 'Spec-Up-T Installer'
 description: 'Install a Spec-Up-T glossary'
 author: 'Kor Dwarshuis'
 runs:
-  using: 'node21'
+  using: 'node20'
   main: 'create-spec-up-t-starterpack.js'
 branding:
   icon: 'terminal'
