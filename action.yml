@@ -3,9 +3,7 @@ description: 'Install a Spec-Up-T glossary'
 author: 'Kor Dwarshuis'
 runs:
   using: 'node20'
-  pre: |
-    npm install
-  main: 'create-spec-up-t-starterpack.js'
+  main: 'start.js'
 branding:
   icon: 'terminal'
   color: 'blue'
