@@ -1,23 +1,15 @@
-const { execSync } = require('child_process');
 const path = require('path');
+const { execSync } = require('child_process');
 
-// Print the current working directory
-console.log('Current working directory:', process.cwd());
+// Use GitHub Actions environment variable
+const cwd = process.env.GITHUB_WORKSPACE || process.cwd();
 
-// Print environment variables
-console.log('Environment variables:', process.env);
-
-// Change to the correct directory if needed
-const correctDir = path.resolve(__dirname, '..');
-if (process.cwd() !== correctDir) {
-    console.log(`Changing working directory to ${correctDir}`);
-    process.chdir(correctDir);
-}
+console.log(`Current working directory: ${cwd}`);
 
 // Install dependencies
 console.log('Installing dependencies...');
-execSync('npm install', { stdio: 'inherit' });
+execSync('npm install', { stdio: 'inherit', cwd });
 
 // Run the main script
 console.log('Running the main script...');
-require('./create-spec-up-t-starterpack.js');
+require(path.join(cwd, 'create-spec-up-t-starterpack.js'));
