@@ -2,7 +2,17 @@
 
 # Function to handle the user's choice
 function handle_choice() {
-    if [[ "$choice" == "1" ]]; then
+    if [[ "$choice" == "0" ]]; then
+        echo " "
+        echo " "
+        echo "  ************************************"
+        echo "  Add content"
+        echo "  ************************************"
+        echo " "
+        echo " "
+        show_progress
+        do_add_content
+    elif [[ "$choice" == "1" ]]; then
         echo " "
         echo " "
         echo "  ************************************"
@@ -130,6 +140,7 @@ function display_intro() {
     echo " "
     echo "  Please choose one of the following options:"
     echo " "
+    echo "   [0] Add content"
     echo "   [1] Render specification"
     echo "   [2] Export to PDF"
     echo "   [3] Update new xrefs"
@@ -149,6 +160,11 @@ function prompt_input() {
     read -n 1 -r -p "   Enter your choice (1/2/3/4/5/6/7/8/Q)? " choice
     echo  # Empty line below the prompt
     echo  # Empty line below the prompt
+}
+
+function do_add_content() {
+    clear
+    echo -e "\n\n\n   ********************\n\n\n   You can start adding your content to the markdown files in the “spec” directory.\n\n   You can do this by editing local files in an editor or by going to your repository on GitHub.\n\n\n   ********************"  
 }
 
 function do_render() {
