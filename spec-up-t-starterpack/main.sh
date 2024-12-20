@@ -179,12 +179,12 @@ function do_topdf() {
 
 function do_xrefs_update() {
     clear
-    npm run xrefupdate
+    npm run xtrefupdate
 }
 
 function do_xrefs_update_all() {
     clear
-    npm run xrefupdateall
+    npm run xtrefupdateall
 }
 
 function do_add_remove_xref_source() {
