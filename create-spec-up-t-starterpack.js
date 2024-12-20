@@ -24,9 +24,9 @@ async function setupSpecPack(dirName) {
         console.log(`${setupCompleteMessage[0]}`);
 
         // Run git init
-        console.log`Initialize git repository`;
+        console.log(`Initialize git repository`);
         execSync(`git init`, { cwd: targetDir, stdio: 'inherit' });
-        console.log`Git repository initialized`;
+        console.log(`Git repository initialized`);
 
         // Install dependencies with npm
         console.log(`Using npm to install dependencies.`);
