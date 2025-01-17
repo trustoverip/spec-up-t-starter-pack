@@ -7,7 +7,7 @@ const { setupCompleteMessage, errorDirExistsMessage } = require('./messages.js')
 
 // Main setup function
 async function setupSpecPack(dirName) {
-    const sourceDir = path.join(__dirname, 'spec-up-t-starterpack');
+    const sourceDir = path.join(__dirname, 'spec-up-t-boilerplate');
     const targetDir = path.join(process.cwd(), dirName);
 
     try {
@@ -64,10 +64,10 @@ async function renameGitignore(targetDir) {
 async function updateReadme(dirName, targetDir) {
     const readmeFile = path.join(targetDir, 'README.md');
     const data = await fs.readFile(readmeFile, 'utf8');
-    const result = data.replace(/spec-up-t-starterpack/g, dirName);
+    const result = data.replace(/spec-up-t-boilerplate/g, dirName);
     await fs.writeFile(readmeFile, result, 'utf8');
 }
 
 // Start setup process with provided directory name
-const dirName = process.argv[2] || 'spec-up-t-starterpack';
+const dirName = process.argv[2] || 'spec-up-t-boilerplate';
 setupSpecPack(dirName);
