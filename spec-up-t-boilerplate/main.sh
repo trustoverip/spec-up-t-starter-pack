@@ -6,8 +6,8 @@ function handle_choice() {
         "Add content" "do_add_content"
         "Render specification" "do_render"
         "Export to PDF" "do_topdf"
-        "Update new xrefs" "do_xrefs_update"
-        "Update all xrefs" "do_xrefs_update_all"
+        "Collect external references (cache, faster)" "collect_external_references_cache"
+        "Collect external references (no cache, slower)" "collect_external_references_no_cache"
         "Add, remove or view xref source" "do_add_remove_xref_source"
         "Configure" "do_configure"
         "Open documentation website" "do_help"
@@ -46,8 +46,8 @@ function display_intro() {
    [0] Add content
    [1] Render specification
    [2] Export to PDF
-   [3] Update new xrefs
-   [4] Update all xrefs
+   [3] Collect external references (cache, faster)
+   [4] Collect external references (no cache, slower)
    [5] Add, remove or view xref source
    [6] Configure
    [7] Open documentation website
@@ -67,13 +67,13 @@ function prompt_input() {
 
 function do_add_content() {
     clear
-    echo -e "\n\n\n   ********************\n\n\n   You can start adding your content to the markdown files in the "spec" directory.\n\n   You can do this by editing local files in an editor or by going to your repository on GitHub.\n\n\n   ********************"  
+    echo -e "\n\n\n   ********************\n\n\n   You can start adding your content to the markdown files in the "spec" directory.\n\n   You can do this by editing local files in an editor or by going to your repository on GitHub.\n\n   More info: https://trustoverip.github.io/spec-up-t-website/docs/various-roles/content-authors-guide/introduction\n\n\n   ********************"  
 }
 
 function do_render() { clear; npm run render; }
 function do_topdf() { clear; npm run topdf; }
-function do_xrefs_update() { clear; npm run xtrefupdate; }
-function do_xrefs_update_all() { clear; npm run xtrefupdateall; }
+function collect_external_references_cache() { clear; npm run collectExternalReferencesCache; }
+function collect_external_references_no_cache() { clear; npm run collectExternalReferencesNoCache; }
 function do_add_remove_xref_source() { clear; npm run addremovexrefsource; }
 function do_configure() { clear; npm run configure; }
 function do_freeze() { clear; npm run freeze; }
