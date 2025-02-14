@@ -55,7 +55,7 @@ async function setupSpecPack(dirName) {
         // execSync(`npm install`, { cwd: targetDir, stdio: 'inherit' });
         execSync(`npm install --silent`, { cwd: targetDir, stdio: 'inherit' });
 
-        console.log(`✅ ${setupCompleteMessage[0]}`);
+        console.log(`${setupCompleteMessage[0]}`);
 
         /* ****************
             Hand over to the spec-up-t package, install.js
