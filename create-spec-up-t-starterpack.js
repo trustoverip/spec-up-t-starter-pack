@@ -33,7 +33,7 @@ async function setupSpecPack(dirName) {
            **************** */
 
         // Run git init
-        console.log(`Initialize git repository`);
+        console.log(`ℹ️ Initialize git repository`);
         execSync(`git init`, { cwd: targetDir, stdio: 'inherit' });
         console.log(`✅ Git repository initialized`);
 
@@ -45,7 +45,7 @@ async function setupSpecPack(dirName) {
         // Copy package.spec-up-t.json to targetDir
         await fs.copy(packageSpecUpT, path.join(targetDir, 'package.json'));
 
-        console.log(`Using npm to install dependencies.`);
+        console.log(`ℹ️ Using npm to install dependencies`);
 
         // Suppress npm audit and fund messages in the project-specific .npmrc
         const npmrcPath = path.join(targetDir, '.npmrc');
