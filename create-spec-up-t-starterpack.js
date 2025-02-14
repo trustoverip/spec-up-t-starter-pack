@@ -13,29 +13,38 @@ async function setupSpecPack(dirName) {
     try {
 
         /* ****************
-            Install Git
+            Handle file system operations
            **************** */
 
         if (fs.existsSync(targetDir)) {
-            console.error(`${errorDirExistsMessage[0]}${dirName}${errorDirExistsMessage[1]}`);
+            console.error(`❌ ${errorDirExistsMessage[0]}${dirName}${errorDirExistsMessage[1]}`);
             process.exit(1);
         }
                 
         // Create targetDir if it doesn't exist
         if (!fs.existsSync(targetDir)) {
             await fs.mkdir(targetDir);
-            console.log(`Created directory: ${dirName}`);
+            console.log(`✅ Created directory: ${dirName}`);
         }
 
-        // Copy package.spec-up-t.json to targetDir
-        await fs.copy(packageSpecUpT, path.join(targetDir, 'package.json'));
+
+        /* ****************
+            Initialize Git
+           **************** */
 
         // Run git init
         console.log(`Initialize git repository`);
         execSync(`git init`, { cwd: targetDir, stdio: 'inherit' });
-        console.log(`Git repository initialized`);
+        console.log(`✅ Git repository initialized`);
 
-        // Install dependencies with npm
+
+        /* ****************
+            Initialize NPM
+           **************** */
+
+        // Copy package.spec-up-t.json to targetDir
+        await fs.copy(packageSpecUpT, path.join(targetDir, 'package.json'));
+
         console.log(`Using npm to install dependencies.`);
 
         // Suppress npm audit and fund messages in the project-specific .npmrc
@@ -46,10 +55,10 @@ async function setupSpecPack(dirName) {
         // execSync(`npm install`, { cwd: targetDir, stdio: 'inherit' });
         execSync(`npm install --silent`, { cwd: targetDir, stdio: 'inherit' });
 
-        console.log(`${setupCompleteMessage[0]}`);
+        console.log(`✅ ${setupCompleteMessage[0]}`);
 
         /* ****************
-            Call spec-up-t install.js 
+            Hand over to the spec-up-t package, install.js
            **************** */
 
         const packageName = 'spec-up-t';
@@ -61,7 +70,7 @@ async function setupSpecPack(dirName) {
 
 
     } catch (err) {
-        console.error('Error during setup:', err);
+        console.error('❌ Error during setup:', err);
         process.exit(1);
     }
 }
