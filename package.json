@@ -6,6 +6,7 @@
   "bin": {
     "create-spec-up-t": "create-spec-up-t-starterpack.js"
   },
+  "homepage": "https://github.com/trustoverip/spec-up-t-starter-pack",
   "dependencies": {
     "fs-extra": "^11.2.0"
   }
