@@ -66,7 +66,12 @@ async function setupSpecPack(dirName) {
         const nodeModulesPath = path.join(basePath, 'node_modules');
         const packagePath = path.join(nodeModulesPath, packageName);
 
+        // Change the current working directory to the target directory
+        process.chdir(targetDir);
+
+        // Now require the installation script
         require(path.join(packagePath, 'src', 'install-from-boilerplate', 'install.js'));
+
 
 
     } catch (err) {
