@@ -69,6 +69,9 @@ async function setupSpecPack(dirName) {
         // Change the current working directory to the target directory
         process.chdir(targetDir);
 
+        // Skip the postinstall message - we'll show our own after configuration
+        process.env.SPEC_UP_T_SKIP_POSTINSTALL_MESSAGE = 'true';
+
         // Now require the installation script (copies boilerplate and adds scripts)
         require(path.join(packagePath, 'src', 'install-from-boilerplate', 'install.js'));
 
@@ -86,6 +89,20 @@ async function setupSpecPack(dirName) {
         
         // Run the configurator and wait for it to complete
         await runStarterpackConfigurator();
+
+        /* ****************
+            Show completion message
+           **************** */
+
+        console.log(`
+*************
+✅ Setup complete!
+
+Next:
+👉 1: Type the following and press ENTER: cd ${dirName}
+👉 2: Type the following and press ENTER: npm run menu
+*************
+`);
 
 
     } catch (err) {
