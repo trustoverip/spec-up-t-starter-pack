@@ -69,9 +69,23 @@ async function setupSpecPack(dirName) {
         // Change the current working directory to the target directory
         process.chdir(targetDir);
 
-        // Now require the installation script
+        // Now require the installation script (copies boilerplate and adds scripts)
         require(path.join(packagePath, 'src', 'install-from-boilerplate', 'install.js'));
 
+        /* ****************
+            Run the interactive specs.json configuration (menu 6)
+           **************** */
+
+        console.log(`\n📝 Now let's configure your specs.json...\n`);
+        
+        // Prevent auto-run by setting environment variable BEFORE requiring the module
+        process.env.SPEC_UP_T_CONFIGURATOR_AUTORUN = 'false';
+        
+        // Load the starterpack configurator (auto-run is disabled by env var)
+        const { runStarterpackConfigurator } = require(path.join(packagePath, 'src', 'pipeline', 'configuration', 'configure-starterpack.js'));
+        
+        // Run the configurator and wait for it to complete
+        await runStarterpackConfigurator();
 
 
     } catch (err) {
