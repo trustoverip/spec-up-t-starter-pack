@@ -69,6 +69,17 @@ async function setupSpecPack(dirName) {
         // Change the current working directory to the target directory
         process.chdir(targetDir);
 
+        /* ****************
+            Select a content template
+           **************** */
+
+        // Prompt the user to choose a content template before copying boilerplate files.
+        // selectTemplate() returns a template object from config-templates.js.
+        // Setting process.env.SPEC_UP_T_TEMPLATE here makes install.js pick it up.
+        const { selectTemplate } = require(path.join(packagePath, 'src', 'install-from-boilerplate', 'select-template.js'));
+        const selectedTemplate = await selectTemplate();
+        process.env.SPEC_UP_T_TEMPLATE = selectedTemplate.id;
+
         // Skip the postinstall message - we'll show our own after configuration
         process.env.SPEC_UP_T_SKIP_POSTINSTALL_MESSAGE = 'true';
 
